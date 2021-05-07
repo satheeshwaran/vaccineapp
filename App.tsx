@@ -28,6 +28,7 @@ import {navigationStateChangeHandler} from './src/Utils/Analytics';
 import {Notification, Notifications} from 'react-native-notifications';
 import {NotificationActionResponse} from 'react-native-notifications/lib/dist/interfaces/NotificationActionResponse';
 import {customNavigate, navigationRef} from './src/Utils/RootNavigation';
+import AvailableSlots from './src/UILayer/AvailableSlots';
 const initBackgroundFetch = async () => {
   // BackgroundFetch event handler.
   const onEvent = async taskId => {
@@ -120,7 +121,7 @@ const registerNotificationHandler = () => {
     ) => {
       console.log('Notification opened by device user', notification.payload);
       completion();
-      customNavigate('Tips', notification.payload.userInfo);
+      customNavigate('AvailableSlots', notification.payload.userInfo);
     },
   );
 };
@@ -238,7 +239,7 @@ const App = () => {
             options={({navigation}) => ({
               headerTitle: 'Vaccine Alerts',
               headerRight: () => (
-                <Button transparent onPress={() => navigation.navigate('Tips')}>
+                <Button transparent onPress={() => navigation.navigate('AvailableSlots')}>
                   <Icon name="bulb" color="#ffffff" />
                 </Button>
               ),
@@ -247,6 +248,7 @@ const App = () => {
           <Stack.Screen name="Select Location" component={SelectScreen} />
           <Stack.Screen name="Tips" component={TipsScreen} />
           <Stack.Screen name="Alert Details" component={AlertDetails} />
+          <Stack.Screen name="AvailableSlots" component={AvailableSlots} />
         </Stack.Navigator>
       </NavigationContainer>
     );
