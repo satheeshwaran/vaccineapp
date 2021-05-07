@@ -23,6 +23,7 @@ import {removeAlert} from '../Utils/utils';
 
 const AlertDetails = ({route}) => {
   console.log(`params ${JSON.stringify(route.params.items)}`);
+  const navigation = useNavigation();
   return (
     <Container>
       <List
@@ -66,6 +67,7 @@ const AlertDetails = ({route}) => {
               text: 'Sure',
               onPress: () => {
                 removeAlert(route.params.items.alertID);
+                navigation.navigate('VaccineAlerts'); 
               },
               style: 'cancel',
             },

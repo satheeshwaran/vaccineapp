@@ -145,5 +145,8 @@ export const vaccineIcon = type => {
     case 'COVISHIELD': {
       return require('../assets/covishield.jpg');
     }
+    default: {
+      return require('../assets/2.png')
+    }
   }
 };
