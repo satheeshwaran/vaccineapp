@@ -1,22 +1,6 @@
 import {useNavigation} from '@react-navigation/core';
 import {get} from 'lodash';
-import {
-  Button,
-  Card,
-  Container,
-  Content,
-  Header,
-  Icon,
-  Item,
-  Left,
-  List,
-  ListItem,
-  Right,
-  Text,
-  Body,
-  H1,
-  CardItem,
-} from 'native-base';
+import {Button, Container, List, ListItem, Text} from 'native-base';
 import React, {Fragment, useEffect, useState} from 'react';
 import {Alert, StyleSheet} from 'react-native';
 import {removeAlert} from '../Utils/utils';
