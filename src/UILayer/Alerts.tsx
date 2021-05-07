@@ -16,7 +16,7 @@ import {
 import React, {useEffect, useState} from 'react';
 import {Image, StyleSheet} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context'; //because of warning => VirtualizedLists should never be nested inside plain ScrollViews with the same orientation - use another VirtualizedList-backed container instead.
-import { stateList } from '../config/mockdata';
+import {stateList} from '../config/mockdata';
 import {readAlerts, vaccineIcon} from '../Utils/utils';
 
 const AlertsScreen = () => {
@@ -81,7 +81,13 @@ const AlertsScreen = () => {
           <Text> Setup Alert </Text>
         </Button>
       </SafeAreaView>
-      <Text style={styles.tandc} onPress={() => {navigation.navigate('TermsAndConditions')}}>Terms and conditions</Text>
+      <Text
+        style={styles.tandc}
+        onPress={() => {
+          navigation.navigate('TNC');
+        }}>
+        Terms and conditions
+      </Text>
     </Container>
   );
 };
@@ -115,8 +121,8 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     textDecorationLine: 'underline',
     color: 'blue',
-    fontSize: 13
-  }
+    fontSize: 13,
+  },
 });
 
 export default AlertsScreen;

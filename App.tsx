@@ -30,7 +30,6 @@ import {NotificationActionResponse} from 'react-native-notifications/lib/dist/in
 import {customNavigate, navigationRef} from './src/Utils/RootNavigation';
 import AvailableSlots from './src/UILayer/AvailableSlots';
 import {notificationUserInfo} from './src/config/mockdata';
-import TandC from './src/UILayer/TermsAndConditions';
 import TermsAndConditions from './src/UILayer/TermsAndConditions';
 const initBackgroundFetch = async () => {
   // BackgroundFetch event handler.
@@ -262,7 +261,7 @@ const App = () => {
           <Stack.Screen name="Tips" component={TipsScreen} />
           <Stack.Screen name="Alert Details" component={AlertDetails} />
           <Stack.Screen name="Available Slots" component={AvailableSlots} />
-          <Stack.Screen name="Terms And Conditions" component={TermsAndConditions} />
+          <Stack.Screen name="TNC" component={TermsAndConditions} />
         </Stack.Navigator>
       </NavigationContainer>
     );
