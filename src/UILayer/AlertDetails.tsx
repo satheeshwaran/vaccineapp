@@ -65,9 +65,9 @@ const AlertDetails = ({route}) => {
           Alert.alert('Delete Alert', 'Are You Sure You Want To Delete?', [
             {
               text: 'Sure',
-              onPress: () => {
-                removeAlert(route.params.items.alertID);
-                navigation.navigate('VaccineAlerts'); 
+              onPress: async () => {
+                await removeAlert(route.params.items.alertID);
+                navigation.navigate('VaccineAlerts');
               },
               style: 'cancel',
             },
