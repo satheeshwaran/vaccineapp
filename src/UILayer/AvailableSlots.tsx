@@ -10,7 +10,7 @@ const next7Days = times(7, num => {
   return {
     name: moment()
       .add(num + 1, 'd')
-      .format('DD-MM'),
+      .format('DD/MM'),
   };
 });
 const AvailableSlots = ({route}) => {
@@ -82,17 +82,22 @@ const AvailableSlots = ({route}) => {
 
 const styles = StyleSheet.create({
   gridView: {
-    marginTop: 20,
+    paddingTop: 20,
     flex: 1,
+    backgroundColor:'#161b22'
   },
   itemContainer: {
     justifyContent: 'flex-end',
     borderRadius: 5,
     padding: 10,
     height: 50,
+    borderWidth:1
   },
   dateContainer: {
     height: 30,
+    borderWidth:1,
+    paddingTop:5,
+    borderRadius: 5,
   },
   itemName: {
     fontSize: 16,
@@ -111,17 +116,18 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontWeight: '600',
     alignItems: 'center',
-    backgroundColor: '#636e72',
+    backgroundColor: '#0278d7',
     color: 'white',
     padding: 10,
+    fontFamily:'Helvetica'
   },
   dateHeader: {
     fontSize: 14,
     color: '#fff',
     textAlign: 'center',
     fontWeight: '800',
-    backgroundColor: '#636e72',
-    borderRadius: 2,
+    backgroundColor: '#0278d7',
+    borderRadius: 9
   },
   availableSlot: {
     backgroundColor: '#2ecc71',
