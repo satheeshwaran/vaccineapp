@@ -154,6 +154,7 @@ const SelectScreen = () => {
               <Item floatingLabel success={isValidPIN} error={!isValidPIN}>
                 <Label style={styles.pincodeLabel}>Pin code</Label>
                 <Input
+                  keyboardType="numeric"
                   style={styles.pinCodeField}
                   onChangeText={text => setPinCode(text)}
                   value={pinCode}

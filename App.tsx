@@ -247,7 +247,7 @@ const App = () => {
                   onPress={
                     () =>
                       // navigation.navigate('Tips')
-                      navigation.navigate('AvailableSlots', {
+                      navigation.navigate('Available Slots', {
                         data: notificationUserInfo,
                       }) //TODO; For debugging please remove.
                   }>
@@ -259,7 +259,7 @@ const App = () => {
           <Stack.Screen name="Select Location" component={SelectScreen} />
           <Stack.Screen name="Tips" component={TipsScreen} />
           <Stack.Screen name="Alert Details" component={AlertDetails} />
-          <Stack.Screen name="AvailableSlots" component={AvailableSlots} />
+          <Stack.Screen name="Available Slots" component={AvailableSlots} />
         </Stack.Navigator>
       </NavigationContainer>
     );
