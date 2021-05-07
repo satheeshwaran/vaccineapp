@@ -244,7 +244,7 @@ const SelectScreen = () => {
           rounded
           style={styles.sectionContainer}>
           <Icon name="alarm" color="white" />
-          <Text> Setup Alerts </Text>
+          <Text> Setup Alert </Text>
         </Button>
       </Content>
     </Container>
