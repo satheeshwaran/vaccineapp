@@ -19,6 +19,7 @@ import com.wix.reactnativenotifications.core.notification.PushNotification;
 public class VaccinePushNotification extends PushNotification {
 
     private Context mContext;
+
     public VaccinePushNotification(Context context, Bundle bundle, AppLifecycleFacade appLifecycleFacade, AppLaunchHelper appLaunchHelper, JsIOHelper jsIoHelper) {
         super(context, bundle, appLifecycleFacade, appLaunchHelper, jsIoHelper);
         mContext = context;
@@ -36,12 +37,8 @@ public class VaccinePushNotification extends PushNotification {
         // Enable 'extended' layout (extends on down-stroke gesture):
         final Notification.BigTextStyle extendedNotificationStyle =
                 new Notification.BigTextStyle()
-                        .bigText(mNotificationProps.getBody()); // "4:15 - 5:15 PM\nBig Conference Room"
-        builder.setStyle(extendedNotificationStyle);
-
-        // Set custom-action icon.
-//        builder.setSmallIcon(R.drawable.meeting_icon)
-//                .setColor(resources.getColor(R.color.notification_bkg_color)); // Blue-ish
+                        .bigText(mNotificationProps.getBody());
+        builder.setStyle(extendedNotificationStyle).setPriority(Notification.PRIORITY_HIGH);
 
         return builder;
     }

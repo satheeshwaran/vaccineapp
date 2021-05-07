@@ -2,9 +2,13 @@ import {Notifications} from 'react-native-notifications';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {Icon} from 'native-base';
 import {get} from 'lodash';
+import {Alert, Linking} from 'react-native';
 const ALERT_KEY = 'ALERT_KEY_3438684343';
 const INTRO_KEY = '35452424';
-
+const COWIN_APP =
+  'https://play.google.com/store/apps/details?id=com.cowinapp.app';
+const SETU_APP = 'https://www.aarogyasetu.gov.in/app';
+const COWIN_SITE = 'https://selfregistration.cowin.gov.in/';
 export const validatePINCode = (pincode: string) => {
   return /^[1-9][0-9]{5}$/gm.test(pincode);
 };
@@ -146,7 +150,38 @@ export const vaccineIcon = type => {
       return require('../assets/covishield.jpg');
     }
     default: {
-      return require('../assets/2.png')
+      return require('../assets/2.png');
     }
   }
+};
+
+export const handleBooking = () => {
+  Alert.alert(
+    'Book your slots?',
+    'Choose which option you prefer',
+    [
+      {
+        text: 'via COWIN App',
+        onPress: () => {
+          Linking.openURL(COWIN_APP);
+        },
+        style: 'cancel',
+      },
+      {
+        text: 'via Arogya Setu',
+        onPress: () => {
+          Linking.openURL(SETU_APP);
+        },
+        style: 'cancel',
+      },
+      {
+        text: 'via COWIN Website',
+        onPress: () => {
+          Linking.openURL(COWIN_SITE);
+        },
+        style: 'cancel',
+      },
+    ],
+    {cancelable: true},
+  );
 };

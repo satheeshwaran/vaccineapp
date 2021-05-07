@@ -1,8 +1,10 @@
-import {times} from 'lodash';
+import {noop, times} from 'lodash';
 import moment from 'moment';
 import React from 'react';
 import {StyleSheet, View, Text} from 'react-native';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 import {SectionGrid} from 'react-native-super-grid';
+import {handleBooking} from '../Utils/utils';
 
 const next7Days = times(7, num => {
   return {
@@ -56,9 +58,16 @@ const AvailableSlots = ({route}) => {
         const availableStyle =
           +item.name > 0 ? styles.availableSlot : styles.unavailableSlot;
         return (
-          <View style={[styles.itemContainer, {backgroundColor: item.code}]}>
-            <Text style={[styles.itemName, availableStyle]}>{item.name}</Text>
-          </View>
+          <TouchableOpacity
+            onPress={() => {
+              if (+item.name > 0) {
+                handleBooking();
+              }
+            }}>
+            <View style={styles.itemContainer}>
+              <Text style={[styles.itemName, availableStyle]}>{item.name}</Text>
+            </View>
+          </TouchableOpacity>
         );
       }}
       renderSectionHeader={({section}) => {
