@@ -29,6 +29,7 @@ import {Notification, Notifications} from 'react-native-notifications';
 import {NotificationActionResponse} from 'react-native-notifications/lib/dist/interfaces/NotificationActionResponse';
 import {customNavigate, navigationRef} from './src/Utils/RootNavigation';
 import AvailableSlots from './src/UILayer/AvailableSlots';
+import {notificationUserInfo} from './src/config/mockdata';
 const initBackgroundFetch = async () => {
   // BackgroundFetch event handler.
   const onEvent = async taskId => {
@@ -121,7 +122,9 @@ const registerNotificationHandler = () => {
     ) => {
       console.log('Notification opened by device user', notification.payload);
       completion();
-      customNavigate('AvailableSlots', notification.payload.userInfo);
+      customNavigate('AvailableSlots', {
+        data: notification.payload.userInfo,
+      });
     },
   );
 };
@@ -239,7 +242,15 @@ const App = () => {
             options={({navigation}) => ({
               headerTitle: 'Vaccine Alerts',
               headerRight: () => (
-                <Button transparent onPress={() => navigation.navigate('AvailableSlots')}>
+                <Button
+                  transparent
+                  onPress={
+                    () =>
+                      // navigation.navigate('Tips')
+                      navigation.navigate('AvailableSlots', {
+                        data: notificationUserInfo,
+                      }) //TODO; For debugging please remove.
+                  }>
                   <Icon name="bulb" color="#ffffff" />
                 </Button>
               ),
