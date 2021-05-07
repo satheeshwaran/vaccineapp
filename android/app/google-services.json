@@ -1,0 +1,345 @@
+{
+  "project_info": {
+    "project_number": "19174840096",
+    "firebase_url": "https://whoismyleader-a20ac.firebaseio.com",
+    "project_id": "whoismyleader-a20ac",
+    "storage_bucket": "whoismyleader-a20ac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:19174840096:android:1745af4c9c380512",
+        "android_client_info": {
+          "package_name": "com.google.firebase.codelab.mlkit_custommodel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "19174840096-f9agu25jt08mqr08bnqs2hhos8fnlold.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.google.firebase.codelab.mlkit_custommodel",
+            "certificate_hash": "2fb768d41b93090c40acf47aacbd0b1d80c98221"
+          }
+        },
+        {
+          "client_id": "19174840096-t6ea135e29env8hjg0auot2pstauscct.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0D4fepfMKCasvQCByB952vvg0Lnidniw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "19174840096-lpo06uvqei2co9ln1d57fj4f6onr8prb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:19174840096:android:09546560b4505797",
+        "android_client_info": {
+          "package_name": "com.google.firebase.samples.apps.mlkit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "19174840096-9r4t8rf2ddd00jv9kv9a2giqtdg3ajc5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.google.firebase.samples.apps.mlkit",
+            "certificate_hash": "2fb768d41b93090c40acf47aacbd0b1d80c98221"
+          }
+        },
+        {
+          "client_id": "19174840096-t6ea135e29env8hjg0auot2pstauscct.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0D4fepfMKCasvQCByB952vvg0Lnidniw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "19174840096-lpo06uvqei2co9ln1d57fj4f6onr8prb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:19174840096:android:57e93ab0e449db0e",
+        "android_client_info": {
+          "package_name": "com.theweekendparty.fuelprice"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "19174840096-m6jb4hb709vc2mlrd47rgpivnnfjq5bi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.theweekendparty.fuelprice",
+            "certificate_hash": "2fb768d41b93090c40acf47aacbd0b1d80c98221"
+          }
+        },
+        {
+          "client_id": "19174840096-t6ea135e29env8hjg0auot2pstauscct.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0D4fepfMKCasvQCByB952vvg0Lnidniw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "19174840096-lpo06uvqei2co9ln1d57fj4f6onr8prb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:19174840096:android:1660f59d5004642d",
+        "android_client_info": {
+          "package_name": "com.theweekendparty.indiangifboardbollywood"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "19174840096-4pdgurluq3gacb9627ksk5tu79jd76lc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.theweekendparty.indiangifboardbollywood",
+            "certificate_hash": "2fb768d41b93090c40acf47aacbd0b1d80c98221"
+          }
+        },
+        {
+          "client_id": "19174840096-t6ea135e29env8hjg0auot2pstauscct.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0D4fepfMKCasvQCByB952vvg0Lnidniw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "19174840096-lpo06uvqei2co9ln1d57fj4f6onr8prb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:19174840096:android:9642e24953ef0342",
+        "android_client_info": {
+          "package_name": "com.theweekendparty.indianmemekeyboard"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "19174840096-74oeoaqeti9uj0kdf6eprmhc50gjtgvg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.theweekendparty.indianmemekeyboard",
+            "certificate_hash": "2fb768d41b93090c40acf47aacbd0b1d80c98221"
+          }
+        },
+        {
+          "client_id": "19174840096-jbt1hdjghu8mmcd5fc1ffso34epg8fng.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.theweekendparty.indianmemekeyboard",
+            "certificate_hash": "64d29962dd8d7d49eda3f7ef96be18c6b9d63df3"
+          }
+        },
+        {
+          "client_id": "19174840096-t6ea135e29env8hjg0auot2pstauscct.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0D4fepfMKCasvQCByB952vvg0Lnidniw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "19174840096-lpo06uvqei2co9ln1d57fj4f6onr8prb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-2783804158804644~9971993218"
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:19174840096:android:a86dda075caa8191",
+        "android_client_info": {
+          "package_name": "com.theweekendparty.whoismyleader"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "19174840096-ejnnds18qhp0latomavf0bgkriggteik.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.theweekendparty.whoismyleader",
+            "certificate_hash": "2fb768d41b93090c40acf47aacbd0b1d80c98221"
+          }
+        },
+        {
+          "client_id": "19174840096-t6ea135e29env8hjg0auot2pstauscct.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0D4fepfMKCasvQCByB952vvg0Lnidniw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "19174840096-lpo06uvqei2co9ln1d57fj4f6onr8prb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:19174840096:android:da1cc82376bea969",
+        "android_client_info": {
+          "package_name": "com.theweekendpartyapps.clashmobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "19174840096-suvtq2l83c2vcl5ija60pnelqfqlch93.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.theweekendpartyapps.clashmobile",
+            "certificate_hash": "2fb768d41b93090c40acf47aacbd0b1d80c98221"
+          }
+        },
+        {
+          "client_id": "19174840096-t6ea135e29env8hjg0auot2pstauscct.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0D4fepfMKCasvQCByB952vvg0Lnidniw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "19174840096-lpo06uvqei2co9ln1d57fj4f6onr8prb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:19174840096:android:2e0828c0925f5f52",
+        "android_client_info": {
+          "package_name": "com.theweekendpartyapps.instawallpaper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "19174840096-qn97pm6ja9rmibokg92o1c9qbdtto6d6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.theweekendpartyapps.instawallpaper",
+            "certificate_hash": "2fb768d41b93090c40acf47aacbd0b1d80c98221"
+          }
+        },
+        {
+          "client_id": "19174840096-t6ea135e29env8hjg0auot2pstauscct.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0D4fepfMKCasvQCByB952vvg0Lnidniw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "19174840096-lpo06uvqei2co9ln1d57fj4f6onr8prb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:19174840096:android:43b9e12e77f81df787e945",
+        "android_client_info": {
+          "package_name": "com.vaccineapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "19174840096-t6ea135e29env8hjg0auot2pstauscct.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0D4fepfMKCasvQCByB952vvg0Lnidniw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "19174840096-lpo06uvqei2co9ln1d57fj4f6onr8prb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
