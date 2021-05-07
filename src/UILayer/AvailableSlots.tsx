@@ -200,8 +200,13 @@ const AvailableSlots = () => {
       ]}
       style={styles.gridView}
       renderItem={({item, section, index}) => {
-        if (item.title === '') {
-          return <Text style={styles.itemCode}>{item}</Text>;
+        if (section.title === '') {
+          console.log(item.name);
+          return (
+            <View style={styles.dateContainer}>
+              <Text style={styles.dateHeader}>{item.name}</Text>
+            </View>
+          );
         }
         return (
           <View style={[styles.itemContainer, {backgroundColor: item.code}]}>
@@ -211,7 +216,7 @@ const AvailableSlots = () => {
         );
       }}
       renderSectionHeader={({section}) => {
-        if (section.index === 0) {
+        if (section.title === '') {
           return null;
         }
         return <Text style={styles.sectionHeader}>{section.title}</Text>;
@@ -231,6 +236,9 @@ const styles = StyleSheet.create({
     padding: 10,
     height: 150,
   },
+  dateContainer: {
+    height: 30,
+  },
   itemName: {
     fontSize: 16,
     color: '#fff',
@@ -249,6 +257,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#636e72',
     color: 'white',
     padding: 10,
+  },
+  dateHeader: {
+    fontSize: 14,
+    color: '#fff',
+    textAlign: 'center',
+    fontWeight: '800',
+    backgroundColor: '#636e72',
+    borderRadius: 2,
   },
 });
 
