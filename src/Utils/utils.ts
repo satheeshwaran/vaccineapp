@@ -25,10 +25,15 @@ export const processCenterData = (centers, displayName, queryObject) => {
     })
     .map(center => {
       const sessions = center.sessions.filter(
-        session =>
-          session.available_capacity > 0 &&
-          session.min_age_limit === +min_age_limit,
-        vaccine !== '' ? session.vaccine === vaccine : true,
+        session => {
+          if (vaccine !== '' && session.vaccine !== vaccine) {
+            return false;
+          }
+          return (
+            session.available_capacity > 0 &&
+            session.min_age_limit === +min_age_limit
+          );
+        },
         //session => session.min_age_limit === 18 && session.available_capacity > 0,
       );
       if (sessions.length === 0) {

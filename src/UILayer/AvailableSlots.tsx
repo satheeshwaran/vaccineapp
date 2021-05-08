@@ -84,18 +84,15 @@ const styles = StyleSheet.create({
   gridView: {
     paddingTop: 20,
     flex: 1,
-    backgroundColor:'#161b22'
   },
   itemContainer: {
     justifyContent: 'flex-end',
     borderRadius: 5,
     padding: 10,
     height: 50,
-    borderWidth:1
   },
   dateContainer: {
-    height: 30,
-    borderWidth:1,
+    height: 40,
     paddingTop:5,
     borderRadius: 5,
   },
@@ -122,12 +119,12 @@ const styles = StyleSheet.create({
     fontFamily:'Helvetica'
   },
   dateHeader: {
-    fontSize: 14,
+    fontSize: 15,
     color: '#fff',
     textAlign: 'center',
     fontWeight: '800',
     backgroundColor: '#0278d7',
-    borderRadius: 9
+    borderRadius: 6
   },
   availableSlot: {
     backgroundColor: '#2ecc71',

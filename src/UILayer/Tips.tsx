@@ -1,24 +1,6 @@
-import {useNavigation} from '@react-navigation/core';
-import {
-  Button,
-  Card,
-  Container,
-  Content,
-  Header,
-  Icon,
-  Item,
-  Left,
-  List,
-  ListItem,
-  Right,
-  Text,
-  Body,
-  H1,
-} from 'native-base';
+import {Container, H1} from 'native-base';
 import React, {useEffect, useState} from 'react';
 import {StyleSheet} from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context'; //because of warning => VirtualizedLists should never be nested inside plain ScrollViews with the same orientation - use another VirtualizedList-backed container instead.
-import {readAlerts} from '../Utils/utils';
 import {getManufacturer} from 'react-native-device-info';
 import {WebView} from 'react-native-webview';
 
@@ -37,7 +19,7 @@ const TipsScreen = () => {
         Follow the tips mentioned below to enhance the reliability of
         vaccination slot alerts
       </H1>
-      <WebView source={{uri: url}} startInLoadingState/>
+      <WebView source={{uri: url}} startInLoadingState />
     </Container>
   );
 };

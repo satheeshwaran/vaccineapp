@@ -46,6 +46,7 @@ const initBackgroundFetch = async () => {
             const {type, value, displayValue} = alert;
             if (type === 'district') {
               let centers = await fetchDistrictAppointments(value);
+              console.log(`centers ${centers}`);
               if (centers.length > 0) {
                 processCenterData(centers, displayValue, alert);
               } else {
@@ -243,15 +244,7 @@ const App = () => {
             options={({navigation}) => ({
               headerTitle: 'Vaccine Alerts',
               headerRight: () => (
-                <Button
-                  transparent
-                  onPress={
-                    () =>
-                      // navigation.navigate('Tips')
-                      navigation.navigate('Available Slots', {
-                        data: notificationUserInfo,
-                      }) //TODO; For debugging please remove.
-                  }>
+                <Button transparent onPress={() => navigation.navigate('Tips')}>
                   <Icon name="bulb" color="#ffffff" />
                 </Button>
               ),
@@ -260,7 +253,7 @@ const App = () => {
           <Stack.Screen name="Select Location" component={SelectScreen} />
           <Stack.Screen name="Tips" component={TipsScreen} />
           <Stack.Screen name="Alert Details" component={AlertDetails} />
-          <Stack.Screen name="Available Slots" component={AvailableSlots} />
+          <Stack.Screen name="AvailableSlots" component={AvailableSlots} />
           <Stack.Screen name="TNC" component={TermsAndConditions} />
         </Stack.Navigator>
       </NavigationContainer>
