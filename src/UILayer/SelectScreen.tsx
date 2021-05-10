@@ -68,7 +68,7 @@ const SelectScreen = () => {
       alertID: random(1, 10000),
       ...(vaccineType !== 'Any' ? {vaccine: vaccineType} : {}),
     };
-    console.log(`alert object ${JSON.stringify(alertObject)}`);
+    //console.log(`alert object ${JSON.stringify(alertObject)}`);
     await addAlerts(alertObject);
     navigation.pop();
   };

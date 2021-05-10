@@ -29,8 +29,8 @@ import {Notification, Notifications} from 'react-native-notifications';
 import {NotificationActionResponse} from 'react-native-notifications/lib/dist/interfaces/NotificationActionResponse';
 import {customNavigate, navigationRef} from './src/Utils/RootNavigation';
 import AvailableSlots from './src/UILayer/AvailableSlots';
-import {notificationUserInfo} from './src/config/mockdata';
 import TermsAndConditions from './src/UILayer/TermsAndConditions';
+import {get, isEmpty} from 'lodash';
 const initBackgroundFetch = async () => {
   // BackgroundFetch event handler.
   const onEvent = async taskId => {
@@ -38,15 +38,14 @@ const initBackgroundFetch = async () => {
     // Do your background work...
     readAlerts()
       .then(savedAlerts => {
-        console.log(`saved alerts ${JSON.stringify(savedAlerts)}`);
+        // console.log(`saved alerts ${JSON.stringify(savedAlerts)}`);
         if (savedAlerts) {
           savedAlerts.map(async alert => {
             //{"type":"district","value":3,"displayValue":"Nicobar","fee_type":"Paid","min_age_limit":18,"alertID":1602}
-            console.log(`background fetch for alert ${JSON.stringify(alert)}`);
+            //console.log(`background fetch for alert ${JSON.stringify(alert)}`);
             const {type, value, displayValue} = alert;
             if (type === 'district') {
               let centers = await fetchDistrictAppointments(value);
-              console.log(`centers ${centers}`);
               if (centers.length > 0) {
                 processCenterData(centers, displayValue, alert);
               } else {
@@ -82,7 +81,12 @@ const initBackgroundFetch = async () => {
 
   // Initialize BackgroundFetch only once when component mounts.
   let status = await BackgroundFetch.configure(
-    {minimumFetchInterval: 15},
+    {
+      minimumFetchInterval: 15,
+      stopOnTerminate: false,
+      enableHeadless: true,
+      startOnBoot: true,
+    },
     onEvent,
     onTimeout,
   );
@@ -124,11 +128,26 @@ const registerNotificationHandler = () => {
     ) => {
       console.log('Notification opened by device user', notification.payload);
       completion();
-      customNavigate('AvailableSlots', {
-        data: notification.payload.userInfo,
-      });
+      const payload = get(notification.payload, 'userInfo', undefined);
+      if (!isEmpty(payload)) {
+        customNavigate('AvailableSlots', {
+          data: payload,
+        });
+      }
     },
   );
+
+  Notifications.getInitialNotification()
+    .then(notification => {
+      console.log('Notification opened by device user', notification.payload);
+      const payload = get(notification, 'payload.userInfo', undefined);
+      if (!isEmpty(payload)) {
+        customNavigate('AvailableSlots', {
+          data: payload,
+        });
+      }
+    })
+    .catch(e => {});
 };
 const Stack = createStackNavigator();
 const App = () => {
@@ -160,9 +179,9 @@ const App = () => {
                   if (isEnabled) {
                     Alert.alert(
                       'Battery optimzation/Doze mode detected',
-                      `To give us unblocked access to sync vaccine appointments and to notify you, we need this to be turned off. \nGo to settings->Choose Not optimized->Scroll to Vaccine app, tap it and choose "Don't optimize". \nPlease note this might be different for OS versions and models. ${
+                      `To give us unblocked access to sync vaccine appointments and to notify you, we need this to be turned off. \nGo to settings->Choose Not optimized->Scroll to CoWin alerts app, tap and choose "Don't optimize". \nPlease note this might be different for OS versions and models. ${
                         result
-                          ? '\n \n Also enable auto start in the next step.'
+                          ? '\n \n Also enable auto start in the next steps.'
                           : ''
                       }`,
                       [

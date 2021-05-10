@@ -23,13 +23,13 @@ export const getDistricts = (stateID: string) => {
 export const fetchAppointmentsByDistrict = (districtID: string) => {
   const selectedDate = moment().add(1, 'd').format('DD-MM-YYYY');
   const url = `${ROOT_URL}appointment/sessions/public/calendarByDistrict?district_id=${districtID}&date=${selectedDate}`;
-  console.log(`url ${url}`);
+  //console.log(`url ${url}`);
   return axios.get(url, headersObject);
 };
 
 export const fetchAppointmentsByPINCode = (pincode: string) => {
   const selectedDate = moment().add(1, 'd').format('DD-MM-YYYY');
   const url = `${ROOT_URL}appointment/sessions/public/calendarByPin?pincode=${pincode}&date=${selectedDate}`;
-  console.log(`url ${url}`);
+  //console.log(`url ${url}`);
   return axios.get(url, headersObject);
 };

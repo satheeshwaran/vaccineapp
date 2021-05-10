@@ -106,7 +106,7 @@ export const addAlerts = async (alertObject: any) => {
 export const readAlerts = async () => {
   try {
     const existingAlerts = await AsyncStorage.getItem(ALERT_KEY);
-    console.log(`existingAlerts ${JSON.stringify(existingAlerts)}`);
+    //console.log(`existingAlerts ${JSON.stringify(existingAlerts)}`);
     if (existingAlerts != null) {
       let oldAlerts = JSON.parse(existingAlerts);
       return oldAlerts;

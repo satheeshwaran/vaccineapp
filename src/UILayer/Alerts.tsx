@@ -26,7 +26,7 @@ const AlertsScreen = () => {
     const unsubscribe = navigation.addListener('focus', () => {
       readAlerts()
         .then(savedAlerts => {
-          console.log(`saved alerts ${JSON.stringify(savedAlerts)}`);
+          //console.log(`saved alerts ${JSON.stringify(savedAlerts)}`);
           setAlerts(savedAlerts);
         })
         .catch(e => {
@@ -38,7 +38,7 @@ const AlertsScreen = () => {
     // Return the function to unsubscribe from the event so it gets removed on unmount
     return unsubscribe;
   }, [navigation]);
-  console.log(alerts);
+  //console.log(alerts);
   return (
     <Container>
       <SafeAreaView>

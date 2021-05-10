@@ -1,4 +1,4 @@
-import {noop, times} from 'lodash';
+import {get, times} from 'lodash';
 import moment from 'moment';
 import React from 'react';
 import {StyleSheet, View, Text} from 'react-native';
@@ -14,8 +14,8 @@ const next7Days = times(7, num => {
   };
 });
 const AvailableSlots = ({route}) => {
-  console.log(`route.params ${JSON.stringify(route.params)}`);
-  const {data} = route.params;
+  // console.log(`route.params ${JSON.stringify(route.params)}`);
+  const data = get(route.params, 'data', {});
   const dates =
     data &&
     data.map(slot => {
@@ -86,22 +86,26 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   itemContainer: {
-    justifyContent: 'flex-end',
+    justifyContent: 'center',
+    alignItems: 'center',
     borderRadius: 5,
-    padding: 10,
     height: 50,
+    flexDirection: 'row',
   },
   dateContainer: {
     height: 40,
-    paddingTop:5,
     borderRadius: 5,
   },
   itemName: {
-    fontSize: 16,
+    fontSize: 18,
     color: '#fff',
     fontWeight: '600',
     textAlign: 'center',
     borderRadius: 5,
+    flex: 1,
+    height: 40,
+    alignSelf: 'center',
+    textAlignVertical: 'center',
   },
   itemCode: {
     fontWeight: '600',
@@ -116,15 +120,15 @@ const styles = StyleSheet.create({
     backgroundColor: '#0278d7',
     color: 'white',
     padding: 10,
-    fontFamily:'Helvetica'
+    fontFamily: 'Helvetica',
   },
   dateHeader: {
-    fontSize: 15,
+    fontSize: 16,
     color: '#fff',
     textAlign: 'center',
     fontWeight: '800',
     backgroundColor: '#0278d7',
-    borderRadius: 6
+    borderRadius: 6,
   },
   availableSlot: {
     backgroundColor: '#2ecc71',
