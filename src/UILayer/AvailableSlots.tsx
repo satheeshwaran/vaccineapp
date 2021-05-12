@@ -1,6 +1,6 @@
 import {get, times} from 'lodash';
 import moment from 'moment';
-import React from 'react';
+import React, {Fragment} from 'react';
 import {StyleSheet, View, Text} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {SectionGrid} from 'react-native-super-grid';
@@ -15,7 +15,10 @@ const next7Days = times(7, num => {
 });
 const AvailableSlots = ({route}) => {
   // console.log(`route.params ${JSON.stringify(route.params)}`);
-  const data = get(route.params, 'data', {});
+  const data = get(route.params, 'data.availableSlots', {});
+  const alertObject = get(route.params, 'data.alert', {});
+  const title = `${get(alertObject, 'vaccine', 'Any vaccine')} vaccination slots for ${get(alertObject,'min_age_limit')}+ @ ${get(alertObject,'displayValue')}`;
+  // console.log(`alertObject ${JSON.stringify(alertObject)}`);
   const dates =
     data &&
     data.map(slot => {
@@ -34,49 +37,54 @@ const AvailableSlots = ({route}) => {
     });
 
   return (
-    <SectionGrid
-      itemDimension={40}
-      // staticDimension={300}
-      // fixed
-      // spacing={20}
-      sections={[
-        {
-          title: '',
-          data: next7Days,
-        },
-        ...dates,
-      ]}
-      style={styles.gridView}
-      renderItem={({item, section, index}) => {
-        if (section.title === '') {
+    <Fragment>
+      <Text style={styles.screenHeader}>{title} </Text>
+      <SectionGrid
+        itemDimension={40}
+        // staticDimension={300}
+        // fixed
+        // spacing={20}
+        sections={[
+          {
+            title: '',
+            data: next7Days,
+          },
+          ...dates,
+        ]}
+        style={styles.gridView}
+        renderItem={({item, section, index}) => {
+          if (section.title === '') {
+            return (
+              <View style={styles.dateContainer}>
+                <Text style={styles.dateHeader}>{item.name}</Text>
+              </View>
+            );
+          }
+          const availableStyle =
+            +item.name > 0 ? styles.availableSlot : styles.unavailableSlot;
           return (
-            <View style={styles.dateContainer}>
-              <Text style={styles.dateHeader}>{item.name}</Text>
-            </View>
+            <TouchableOpacity
+              onPress={() => {
+                if (+item.name > 0) {
+                  handleBooking();
+                }
+              }}>
+              <View style={styles.itemContainer}>
+                <Text style={[styles.itemName, availableStyle]}>
+                  {item.name}
+                </Text>
+              </View>
+            </TouchableOpacity>
           );
-        }
-        const availableStyle =
-          +item.name > 0 ? styles.availableSlot : styles.unavailableSlot;
-        return (
-          <TouchableOpacity
-            onPress={() => {
-              if (+item.name > 0) {
-                handleBooking();
-              }
-            }}>
-            <View style={styles.itemContainer}>
-              <Text style={[styles.itemName, availableStyle]}>{item.name}</Text>
-            </View>
-          </TouchableOpacity>
-        );
-      }}
-      renderSectionHeader={({section}) => {
-        if (section.title === '') {
-          return null;
-        }
-        return <Text style={styles.sectionHeader}>{section.title}</Text>;
-      }}
-    />
+        }}
+        renderSectionHeader={({section}) => {
+          if (section.title === '') {
+            return null;
+          }
+          return <Text style={styles.sectionHeader}>{section.title}</Text>;
+        }}
+      />
+    </Fragment>
   );
 };
 
@@ -84,6 +92,13 @@ const styles = StyleSheet.create({
   gridView: {
     paddingTop: 20,
     flex: 1,
+  },
+  screenHeader: {
+    fontSize: 18,
+    color: '#fff',
+    fontWeight: '800',
+    textAlign: 'center',
+    margin: 10,
   },
   itemContainer: {
     justifyContent: 'center',

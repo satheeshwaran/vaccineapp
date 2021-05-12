@@ -58,7 +58,7 @@ export const processCenterData = (centers, displayName, queryObject) => {
     sendNotification(
       `Vaccination update for ${min_age_limit}+ @ ${displayName}`,
       notificationBody.join('\n'),
-      availableSlots,
+      {availableSlots, alert: queryObject},
     );
   } else {
     sendNotification(
