@@ -86,6 +86,7 @@ const initBackgroundFetch = async () => {
       stopOnTerminate: false,
       enableHeadless: true,
       startOnBoot: true,
+      requiredNetworkType: BackgroundFetch.NETWORK_TYPE_ANY,
     },
     onEvent,
     onTimeout,
@@ -126,7 +127,7 @@ const registerNotificationHandler = () => {
       completion: () => void,
       action: NotificationActionResponse,
     ) => {
-      console.log('Notification opened by device user', notification.payload);
+      console.log('Notification opened by device user');
       completion();
       const payload = get(notification.payload, 'userInfo', undefined);
       if (!isEmpty(payload)) {
@@ -139,7 +140,7 @@ const registerNotificationHandler = () => {
 
   Notifications.getInitialNotification()
     .then(notification => {
-      console.log('Notification opened by device user', notification.payload);
+      console.log('Notification opened by device user');
       const payload = get(notification, 'payload.userInfo', undefined);
       if (!isEmpty(payload)) {
         customNavigate('AvailableSlots', {
