@@ -1,4 +1,5 @@
 import {useNavigation} from '@react-navigation/native';
+import { get } from 'lodash';
 import {Container} from 'native-base';
 import React, {useState} from 'react';
 import {
@@ -9,15 +10,20 @@ import {
   StyleSheet,
 } from 'react-native';
 import WebView from 'react-native-webview';
-const rootURL = 'https://whoismyleader-a20ac.web.app/privacypolicycowin.html';
+const rootURLPrivacy = 'https://cowinalerts.app/privacypolicycowin.html';
+const rootURLTerms = 'https://cowinalerts.app/tnc.html';
 
-const TermsAndConditions = () => {
+const TermsAndConditions = ({route}) => {
   const [accepted, setAcceptd] = useState(false);
   const navigation = useNavigation();
+  const isTnc = get(route.params, 'tnc', false);
 
   return (
     <Container style={styles.container}>
-      <WebView source={{uri: rootURL}} startInLoadingState />
+      <WebView
+        source={{uri: isTnc ? rootURLTerms : rootURLPrivacy}}
+        startInLoadingState
+      />
       <TouchableOpacity
         onPress={() => {
           navigation.goBack();

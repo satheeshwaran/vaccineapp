@@ -13,8 +13,8 @@ import {
   CardItem,
   Card,
 } from 'native-base';
-import React, {useEffect, useState} from 'react';
-import {Image, StyleSheet} from 'react-native';
+import React, {Fragment, useEffect, useState} from 'react';
+import {Image, StyleSheet, View} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context'; //because of warning => VirtualizedLists should never be nested inside plain ScrollViews with the same orientation - use another VirtualizedList-backed container instead.
 import {stateList} from '../config/mockdata';
 import {readAlerts, vaccineIcon} from '../Utils/utils';
@@ -81,13 +81,22 @@ const AlertsScreen = () => {
           <Text> Setup Alert </Text>
         </Button>
       </SafeAreaView>
-      <Text
-        style={styles.tandc}
-        onPress={() => {
-          navigation.navigate('TNC');
-        }}>
-        Terms and conditions
-      </Text>
+      <View style={styles.bottomContainer}>
+        <Text
+          style={styles.tandc}
+          onPress={() => {
+            navigation.navigate('Privacy', {tnc: false});
+          }}>
+          Privacy
+        </Text>
+        <Text
+          style={styles.tandc}
+          onPress={() => {
+            navigation.navigate('Privacy', {tnc: true});
+          }}>
+          Terms and conditions
+        </Text>
+      </View>
     </Container>
   );
 };
@@ -121,7 +130,13 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     textDecorationLine: 'underline',
     color: 'blue',
+    height: 30,
     fontSize: 13,
+    margin: 10,
+  },
+  bottomContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
   },
 });
 
