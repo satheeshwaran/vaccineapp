@@ -274,7 +274,15 @@ const App = () => {
           <Stack.Screen name="Tips" component={TipsScreen} />
           <Stack.Screen name="Alert Details" component={AlertDetails} />
           <Stack.Screen name="AvailableSlots" component={AvailableSlots} />
-          <Stack.Screen name="TNC" component={TermsAndConditions} />
+          <Stack.Screen
+            name="Privacy"
+            component={TermsAndConditions}
+            options={({route}) => ({
+              title: get(route.params, 'tnc', false)
+                ? 'Terms and conditions'
+                : 'Privacy',
+            })}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     );
