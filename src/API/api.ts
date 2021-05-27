@@ -33,3 +33,6 @@ export const fetchAppointmentsByPINCode = (pincode: string) => {
   //console.log(`url ${url}`);
   return axios.get(url, headersObject);
 };
+
+//https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByCenter?center_id=635508&date=27-05-2021
+//https://cdn-api.co-vin.in/api/v2/appointment/centers/public/findByLatLong?lat=12.97&long=79.28

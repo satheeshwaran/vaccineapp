@@ -17,7 +17,14 @@ const AvailableSlots = ({route}) => {
   // console.log(`route.params ${JSON.stringify(route.params)}`);
   const data = get(route.params, 'data.availableSlots', {});
   const alertObject = get(route.params, 'data.alert', {});
-  const title = `${get(alertObject, 'vaccine', 'Any vaccine')} vaccination slots for ${get(alertObject,'min_age_limit')}+ @ ${get(alertObject,'displayValue')}`;
+  const title = `${get(
+    alertObject,
+    'vaccine',
+    'Any vaccine',
+  )} vaccination slots for ${get(alertObject, 'min_age_limit')}+ @ ${get(
+    alertObject,
+    'displayValue',
+  )}`;
   // console.log(`alertObject ${JSON.stringify(alertObject)}`);
   const dates =
     data &&
@@ -90,12 +97,11 @@ const AvailableSlots = ({route}) => {
 
 const styles = StyleSheet.create({
   gridView: {
-    paddingTop: 20,
+    marginTop: 20,
     flex: 1,
   },
   screenHeader: {
     fontSize: 18,
-    color: '#fff',
     fontWeight: '800',
     textAlign: 'center',
     margin: 10,

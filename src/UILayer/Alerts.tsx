@@ -2,21 +2,17 @@ import {useNavigation} from '@react-navigation/core';
 import {
   Button,
   Container,
-  Content,
   Icon,
   Left,
   List,
   ListItem,
-  Right,
   Text,
   Body,
-  CardItem,
-  Card,
 } from 'native-base';
-import React, {Fragment, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Image, StyleSheet, View} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context'; //because of warning => VirtualizedLists should never be nested inside plain ScrollViews with the same orientation - use another VirtualizedList-backed container instead.
-import {stateList} from '../config/mockdata';
+// import {stateList} from '../config/mockdata';
 import {readAlerts, vaccineIcon} from '../Utils/utils';
 
 const AlertsScreen = () => {

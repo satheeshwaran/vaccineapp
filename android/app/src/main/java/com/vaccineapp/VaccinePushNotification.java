@@ -14,7 +14,7 @@ import com.wix.reactnativenotifications.core.notification.PushNotification;
 /**
  * Overrides the default PushNotification implementation to create a
  * notification with a layout similar to the 'The Big Meeting' notification,
- * showing in the screenshot above.
+ * showing in the screenshot above
  */
 public class VaccinePushNotification extends PushNotification {
 
@@ -39,7 +39,6 @@ public class VaccinePushNotification extends PushNotification {
                 new Notification.BigTextStyle()
                         .bigText(mNotificationProps.getBody());
         builder.setStyle(extendedNotificationStyle).setPriority(Notification.PRIORITY_HIGH);
-
         return builder;
     }
 }

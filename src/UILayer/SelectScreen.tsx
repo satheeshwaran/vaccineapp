@@ -184,6 +184,7 @@ const SelectScreen = () => {
                   value="COVISHIELD"
                 />
                 <Picker.Item label="Covaxin - Bharat BioTech" value="COVAXIN" />
+                <Picker.Item label="Sputnik V" value="SPUTNIK V" />
                 <Picker.Item label="Any" value="Any" />
               </Picker>
             </Item>

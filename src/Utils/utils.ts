@@ -152,13 +152,16 @@ export const setWalkThroughStatus = async status => {
   }
 };
 
-export const vaccineIcon = type => {
+export const vaccineIcon = (type: string) => {
   switch (type) {
     case 'COVAXIN': {
       return require('../assets/covaxin.jpg');
     }
     case 'COVISHIELD': {
       return require('../assets/covishield.jpg');
+    }
+    case 'SPUTNIK': {
+      return require('../assets/sputnik.jpg');
     }
     default: {
       return require('../assets/2.png');
